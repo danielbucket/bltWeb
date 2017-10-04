@@ -12,3 +12,13 @@
 	height: 124px;
 	margin-top: 12px;
 }
+
+.login-box {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.login-text {
+	margin: 5px;
+}
