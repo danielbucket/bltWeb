@@ -1,18 +1,14 @@
 const db = require('../knex')
 
 const verifyUser = (req,res,next) => {
-const user_name = req.body.name;
+const user_name = req.body.user.user_name;
 
 db('users').where('user_name', user_name)
 .select('user_name')
 .then(data => {
 
 	if(!data.length) {
-		return res.redirect(202, '/api/v1/signup', {
-			"method":"POST",
-			"body": JSON.stringify(req.body),
-			"headers": {"ContentType": "application/json"}
-		})
+		return res.redirect(202, '/api/v1/signup')
 	}
 
 	next()
