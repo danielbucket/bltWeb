@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="./body.css">
 	<link rel="stylesheet" type="text/css" href="./footer.css">
 	<link rel="stylesheet" type="text/css" href="./normalize.css">
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
 </head>
 <body>
 	<section class="main-body">
@@ -14,14 +15,28 @@
 		<header class="header-container">
 			<div class="bucket-logo"></div>
 			<h3>Bucket Limited</h3>
-			<div class="login">
+
+			<div id="loginContainer" class="login-container">
 				<div class="login-box">
 					<h3 class="login-text">Log In / Sign Up</h3>
-					<input id="username-text" class="username-text" type="text"  placeholder="username" name="username">
-					<input id="email-text" 			class="email-text" 			type="email" placeholder="email"  	name="email">
-					<input id="password-text" class="password-text" type="text" 	placeholder="password" name="password">
-					<button id="submit-btn" >Submit</button>
+					<input id="usernameText"
+												class="username-text"
+												type="text"
+												placeholder="username"
+												name="username">
+					<input id="emailText"
+												class="email-text"
+												type="email"
+												placeholder="email"
+												name="email">
+					<input id="passwordText"
+												class="password-text"
+												type="text"
+												placeholder="password"
+												name="password">
+					<button id="submitBtn">Submit</button>
 				</div>
+				<div id="chatBox" class="chat-box"></div>
 			</div>
 
 		</header>
