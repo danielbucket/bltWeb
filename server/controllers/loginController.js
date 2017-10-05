@@ -1,13 +1,12 @@
 const db = require('../knex')
 
 const newUser = (req,res) => {
-	const userData = req.body.user;
-	
-	console.log(userData)
-	// db('users').where('user_name', userData.userName)
-	// .select('*')
-	// .then(user => res.status(404).json({ userData }) )
-	// .catch(error => res.status(500).json({ error: error }))
+	const user = req.body
+
+	db('users')
+	.insert(user, 'user_name')
+	.then(data => res.status(201).json(data[0]) )
+	.catch(error => res.status(500).json({ error }))
 }
 
 

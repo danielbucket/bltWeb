@@ -1,20 +1,6 @@
 const db = require('../knex')
 
-const verifyUser = (req,res,next) => {
-const user_name = req.body.user.user_name;
-
-db('users').where('user_name', user_name)
-.select('user_name')
-.then(data => {
-
-	if(!data.length) {
-		return res.redirect(202, '/api/v1/signup')
-	}
-
-	next()
-})
-.catch(error => res.status(500).json({ error }))
-
+const verifyUser = (req,res) => {
 }
 
 const getAllUsers = (req, res) => {
