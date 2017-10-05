@@ -24,5 +24,5 @@ exports.down = (knex, Promise) => {
   return Promise.all([
   	knex.schema.dropTable('passwords'),
   	knex.schema.dropTable('users')
-  	])
+	])
 };
