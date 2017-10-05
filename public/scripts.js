@@ -13,21 +13,27 @@ const isNewUser = user => {
 	.catch(error => console.log( error ))
 }
 
+
+
 const checkUser = user => {
 	fetch('api/v1/users')
 	.then(data => data.json())
 	.then(usersList => {
-		const found = usersList.users.find(list => {
-			return user.name === list.user_name
+		const found = usersList.users.find(listItem => {
+
+			if (user.user_name === listItem.user_name
+							&& user.email === listItem.email)
+			{ return listItem }
 		})
 
-		if(!found) {
-			return	isNewUser(user)
-		}
-
-			console.log('found: ', found)
+		if(!found){ return isNewUser(user) }
+		if(found){ return printUserData(found) }
+		
 	})
+	.catch(error => console.log( error ))
 }
+
+
 
 $('#submitBtn').on('click', () => {
 	const user_name = $('.username-text').val()
