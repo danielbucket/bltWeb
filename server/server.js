@@ -1,12 +1,12 @@
-const express 			= require('express');
-const app 							= express();
+const express = require('express');
+const app = express();
 const bodyParser = require('body-parser');
-const path 						= require('path');
-const router 				= require('./router')
+const path = require('path');
+const router = require('./router')
 
-const env 			= process.env.NODE_ENV || 'development';
+const env = process.env.NODE_ENV || 'development';
 const config = require('../knexfile')[env];
-const db 				= require('knex')(config);
+const db = require('knex')(config);
 
 app.set('port', process.env.PORT || 4000);
 
@@ -23,7 +23,7 @@ app.get('/', (req,res) => {
 
 
 app.listen(app.get('port'), () => {
-	console.log(`app is listening on port: ${app.get('port')}` )
+	console.log(`app is listening on port: ${ app.get('port') }`)
 })
 
 module.exports = app;

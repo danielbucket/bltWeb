@@ -5,7 +5,14 @@ exports.up = (knex, Promise) => {
   		table.increments('id').primary()
       
   		table.string('user_name')
-      table.string('email')
+  		table.string('email')
+      table.string('password')
+      
+  		table.timestamps(true, true)
+  	}),
+
+  	knex.schema.createTable('passwords', table => {
+  		table.increments('id').primary()
   		table.string('password')
 
   		table.timestamps(true, true)
